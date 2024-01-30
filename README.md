@@ -1,1092 +1,1542 @@
 # EnchantedBlueprintString
 
-### **GetstringLength**
-
-**Type de retour :** `Entier`
-
-**Paramètres :**
-- `string` (Type : `Chaîne de caractères`): La chaîne dont vous souhaitez obtenir la longueur.
-
-**Description :**
-Cette fonction retourne la longueur de la cha
-
-
-
-User
-NON LAISSE TOUT EN ANGMA
-ChatGPT
-Certainly, my apologies for the misunderstanding. Here's the documentation in English:
-
-markdown
-Copy code
-# Unreal Engine 5 Plugin Documentation
-
-## String Utility Functions
+---
 
 ### **GetstringLength**
 
-**Return Type:** `Integer`
+**Return Type:** `int`
 
 **Parameters:**
-- `string` (Type: `String`): The string for which you want to get the length.
+- `FString string`
 
 **Description:**
-This function returns the length of the specified string.
+
+
+---
 
 ---
 
 ### **IsValidStringIndex**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string for which you want to check the index.
-- `index` (Type: `Integer`): The index you want to check.
+- `FString string, int index`
 
 **Description:**
-Checks if the given index is valid for the specified string.
+Check if the index of the string is valid
+
+---
 
 ---
 
 ### **ContainsSubStringInString**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The main string.
-- `subString` (Type: `String`): The substring you are looking for.
+- `FString string, FString subString`
 
 **Description:**
-Checks if the specified string contains the given substring.
+
+
+---
 
 ---
 
 ### **CountSubStringInString**
 
-**Return Type:** `Integer`
+**Return Type:** `int`
 
 **Parameters:**
-- `subString` (Type: `String`): The substring you are counting.
-- `string` (Type: `String`): The main string.
+- `FString subString, FString string`
 
 **Description:**
-Counts the number of occurrences of the given substring in the specified string.
+
+
+---
 
 ---
 
 ### **GenerateRandomString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `minLenth` (Type: `Integer`, default: `1`): The minimum length of the generated string.
-- `maxLenth` (Type: `Integer`, default: `1`): The maximum length of the generated string.
+- `int minLenth = 1, int maxLenth = 1`
 
 **Description:**
-Generates a random string of characters with a length between `minLenth` and `maxLenth`.
+generate a string that contains a-z, A-Z, 0-1, and all specific characters
+
+---
 
 ---
 
 ### **GenerateCustomRandomString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `randomCharacters` (Type: `String`): The characters to use for generating the string.
-- `minLenth` (Type: `Integer`, default: `1`): The minimum length of the generated string.
-- `maxLenth` (Type: `Integer`, default: `1`): The maximum length of the generated string.
+- `FString randomCharacters, int minLenth = 1, int maxLenth = 1`
 
 **Description:**
-Generates a random string using the specified characters, with a length between `minLenth` and `maxLenth`.
+generate a random string with your custom characters in it
 
-...
+---
 
-## String Manipulation Functions
+---
+
+### **GenerateIPv4**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `EIPv4Classes ipClass`
+
+**Description:**
+Generate an IPv4 (does not include 0.0.0.0 and 127.0.0.1)
+
+---
+
+---
+
+### **GenerateIPv6**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- ``
+
+**Description:**
+Generate an IPv6  (does not include ::0 and ::1)
+
+---
+
+---
 
 ### **RandomizeString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The string you want to randomize.
+- `FString string`
 
 **Description:**
-Randomly shuffles the characters in the specified string.
+generate a string that contains a-z, A-Z, 0-1, and all specials characters
+
+---
 
 ---
 
 ### **MoveLeft**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The string you want to move.
-- `iteration` (Type: `Integer`): The number of iterations to move left.
+- `FString string, int iteration`
 
 **Description:**
-Moves the characters to the left in the specified string.
+Move all characters to the left starting at index with number of iteration
 
 ---
 
-## String Manipulation Functions (Continued)
+---
 
 ### **MoveRight**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The string you want to move.
-- `iteration` (Type: `Integer`): The number of iterations to move right.
+- `FString string, int iteration`
 
 **Description:**
-Moves the characters to the right in the specified string.
+Move all characters to the right starting at index with number of iteration
+
+---
 
 ---
 
 ### **FindLastCharIndex**
 
-**Return Type:** `Integer`
+**Return Type:** `int32`
 
 **Parameters:**
-- `string` (Type: `String`): The string to search in.
-- `character` (Type: `String`): The character to find.
+- `FString string, FString character`
 
 **Description:**
-Finds the last index of the specified character in the string.
+find the last index of a char in a string. function will always use the first character of the 'character' variable
+
+---
 
 ---
 
 ### **FindFirstCharIndex**
 
-**Return Type:** `Integer`
+**Return Type:** `int32`
 
 **Parameters:**
-- `string` (Type: `String`): The string to search in.
-- `character` (Type: `String`): The character to find.
+- `FString string, FString character`
 
 **Description:**
-Finds the first index of the specified character in the string.
+find the first index of a char in a string. function will always use the first character of the 'character' variable
+
+---
 
 ---
 
 ### **InsertStringAt**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `insertString` (Type: `String`): The string to insert.
-- `index` (Type: `Integer`): The index at which to insert the string.
+- `FString string, FString insertString, int index`
 
 **Description:**
-Inserts the specified string at the given index in the original string.
+insert a string in a string at index
+
+---
 
 ---
 
 ### **GetStringAfterChar**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `character` (Type: `String`): The character after which to extract the substring.
-- `count` (Type: `Integer`): The number of occurrences of the character to skip.
+- `FString string, FString character, int count`
 
 **Description:**
-Gets the substring in the original string that occurs after the specified character.
+return a string part after the n (count) given char. If count is bigger than char number, it will use the last found char of the string
+
+---
 
 ---
 
 ### **GetStringBeforeChar**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `character` (Type: `String`): The character before which to extract the substring.
-- `count` (Type: `Integer`): The number of occurrences of the character to consider.
+- `FString string, FString character, int count`
 
 **Description:**
-Gets the substring in the original string that occurs before the specified character.
+return a string part before the n (count) given char. If count is bigger than char number, it will use the last found char of the string
+
+---
 
 ---
 
 ### **GetStringAfterFirstChar**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `character` (Type: `String`): The first occurrence of the character after which to extract the substring.
+- `FString string, FString character`
 
 **Description:**
-Gets the substring in the original string that occurs after the first occurrence of the specified character.
+return a string part after the first given char
+
+---
 
 ---
 
 ### **GetStringBeforeFirstChar**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `character` (Type: `String`): The first occurrence of the character before which to extract the substring.
+- `FString string, FString character`
 
 **Description:**
-Gets the substring in the original string that occurs before the first occurrence of the specified character.
+return a string part before the first given char
+
+---
 
 ---
 
 ### **GetStringAfterLastChar**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `character` (Type: `String`): The last occurrence of the character after which to extract the substring.
+- `FString string, FString character`
 
 **Description:**
-Gets the substring in the original string that occurs after the last occurrence of the specified character.
+return a string part after the last given char
+
+---
 
 ---
 
 ### **GetStringBeforeLastChar**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `character` (Type: `String`): The last occurrence of the character before which to extract the substring.
+- `FString string, FString character`
 
 **Description:**
-Gets the substring in the original string that occurs before the last occurrence of the specified character.
+return a string part before the last given char
 
-...
+---
+
+---
 
 ### **GetUrlSubDomain**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The URL string.
+- `FString string`
 
 **Description:**
-Extracts the subdomain from the specified URL string.
+Return the subdomain part of a URL
+
+---
 
 ---
 
 ### **GetUrlTLD**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The URL string.
+- `FString string`
 
 **Description:**
-Extracts the top-level domain (TLD) from the specified URL string.
+Return the top-level domain (TLD) of a URL
+
+---
 
 ---
 
 ### **GetUrlDomain**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The URL string.
+- `FString string`
 
 **Description:**
-Extracts the domain from the specified URL string.
+Return the domain part of a URL
 
-...
+---
+
+---
 
 ### **GetDateTimeDateAsString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `dateTime` (Type: `DateTime`): The DateTime object.
+- `FDateTime dateTime`
 
 **Description:**
-Converts the date part of the specified DateTime object to a string.
+Return the date portion of a dateTime as a string
+
+---
 
 ---
 
 ### **GetDateTimeTimeAsString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `dateTime` (Type: `DateTime`): The DateTime object.
+- `FDateTime dateTime`
 
 **Description:**
-Converts the time part of the specified DateTime object to a string.
+Return the time portion of a dateTime as a string
+
+---
 
 ---
 
 ### **RemoveAt**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `index` (Type: `Integer`): The index at which to remove a character.
+- `FString string, int index`
 
 **Description:**
-Removes the character at the specified index in the original string.
+remove character in a string at index
+
+---
 
 ---
 
 ### **RemoveSpaces**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Removes all spaces from the specified string.
+remove all spaces in a string
+
+---
 
 ---
 
 ### **RemoveNumerics**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Removes all numeric characters from the specified string.
+remove all numerics in a string
 
-...
+---
+
+---
+
+### **RemoveAlphas**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+remove all Alphas in a string
+
+---
+
+---
+
+### **RemoveSpecials**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+remove all specials characters in a string
+
+---
+
+---
 
 ### **RemoveUpper**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Removes all uppercase characters from the specified string.
+remove all upper characters in a string
+
+---
 
 ---
 
 ### **RemoveLower**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Removes all lowercase characters from the specified string.
+remove all lower characters in a string
 
-...
+---
+
+---
+
+### **RemoveMultipleSpaces**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+remove multiple spaces in a string. ('this    is a   string' --> 'this is a string')
+
+---
+
+---
 
 ### **RemoveChars**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `characters` (Type: `String`): The characters to remove from the original string.
+- `FString string, FString characters`
 
 **Description:**
-Removes the specified characters from the original string.
+remove any given characters in a string. Each char of the given characters will be removed from the given string
+
+---
 
 ---
 
 ### **TrimStart**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Removes leading whitespaces from the specified string.
+remove all spaces at the start of the string
 
-...
+---
+
+---
+
+### **TrimEnd**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+remove all spaces at the end of the string
+
+---
+
+---
+
+### **TrimStartEnd**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+remove all spaces at the start and at the end of the string
+
+---
+
+---
 
 ### **TrimQuotes**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Removes single and double quotes from both ends of the specified string.
+Remove first and last characters if they are quotes
 
-...
+---
+
+---
+
+### **RemoveFromStart**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string, FString inPrefix`
+
+**Description:**
+Removes the text from the start of the string if it exists.
+
+---
+
+---
+
+### **RemoveFromEnd**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string, FString inPrefix`
+
+**Description:**
+Removes the text from the end of the string if it exists.
+
+---
+
+---
+
+### **RemoveFromStartAndEnd**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string, FString inPrefix`
+
+**Description:**
+Removes the text from the start end the end of the string if it exists.
+
+---
+
+---
 
 ### **RemoveString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
-- `subString` (Type: `String`): The substring to remove.
+- `FString string, FString subString`
 
 **Description:**
-Removes the specified substring from the original string.
+Return a string with the specified substring removed
 
-...
+---
+
+---
+
+### **RemoveStrings**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string, TArray<FString> subStrings`
+
+**Description:**
+Return a string with the specified substrings removed
+
+---
+
+---
 
 ### **ToLower**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Converts all characters in the specified string to lowercase.
+return a string with only lowercase characters
 
-...
+---
+
+---
+
+### **ToUpper**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+return a string with only uppercase characters
+
+---
+
+---
+
+### **InvertString**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+return a string with invert characters order
+
+---
+
+---
 
 ### **ToCamelCase**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The original string.
+- `FString string`
 
 **Description:**
-Converts the specified string to camel case.
+Convert string into a Came Case string format \n First character of each words are in lower case exept the first one, spaces are deleted
 
-...
+---
+
+---
+
+### **ToPascalCase**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+Convert string into a Pascal Case string format \n First character of each words are in lower case, spaces are deleted
+
+---
+
+---
+
+### **ToSnakeCase**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+Convert string into a Snake Case string format \n spaces between words are replaced with underscores ( _ ). All characters are in lower case
+
+---
+
+---
+
+### **ToKebabCase**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+Convert string into a Kebab Case string format \n spaces between words are replaced with dashes ( - ). All characters are in lower case
+
+---
+
+---
+
+### **ToTitleCase**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+Convert string into a Title Case string format \n First character is in lower case and other ones are in lower case
+
+---
+
+---
+
+### **InvertCase**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+Convert string into a Invert Case string format \n Upper characters will become lower characters and low characters will become upper characters
+
+---
+
+---
+
+### **AlternateCase**
+
+**Return Type:** `FString`
+
+**Parameters:**
+- `FString string`
+
+**Description:**
+Convert string into a Alternate Case string format \n Characters will be alterned between upper and lower ( depending on the first character cases )
+
+---
+
+---
 
 ### **ConvertStringIntoBool**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to convert.
+- `FString string`
 
 **Description:**
-Converts the specified string into a boolean value.
+if the string does not contains a value that can be convert into a boolean value the fonction will be return false. \n acceptable value ({1 | 0}, {true | false}) 
 
-...
+---
+
+---
 
 ### **ConvertStringToColor**
 
-**Return Type:** `Color`
+**Return Type:** `FColor`
 
 **Parameters:**
-- `string` (Type: `String`): The string representation of color.
-- `separator` (Type: `String`): The separator used in the string.
+- `FString string, FString separator`
 
 **Description:**
-Converts the specified string into a color using the provided separator.
+Convert string to string
+
+---
 
 ---
 
 ### **ConvertColorToString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `color` (Type: `Color`): The color to convert.
+- `FColor color`
 
 **Description:**
-Converts the specified color into a string representation.
+Convert color to string
+
+---
 
 ---
 
 ### **ConvertStringToLinearColor**
 
-**Return Type:** `LinearColor`
+**Return Type:** `FLinearColor`
 
 **Parameters:**
-- `string` (Type: `String`): The string representation of linear color.
-- `separator` (Type: `String`): The separator used in the string.
+- `FString string, FString separator`
 
 **Description:**
-Converts the specified string into a linear color using the provided separator.
+convert string linear color
+
+---
 
 ---
 
 ### **ConvertStringToDatetime**
 
-**Return Type:** `DateTime`
+**Return Type:** `FDateTime`
 
 **Parameters:**
-- `string` (Type: `String`): The string representation of datetime.
-- `separator` (Type: `String`): The separator used in the string.
+- `FString string, FString separator`
 
 **Description:**
-Converts the specified string into a datetime object using the provided separator.
+return a datetime based on string
 
-...
+---
+
+---
 
 ### **ConvertStringToRotator**
 
-**Return Type:** `Rotator`
+**Return Type:** `FRotator`
 
 **Parameters:**
-- `string` (Type: `String`): The string representation of rotator.
-- `separator` (Type: `String`): The separator used in the string.
+- `FString string, FString separator`
 
 **Description:**
-Converts the specified string into a rotator using the provided separator.
+return a rotator based on string sapces and given separator will be removed automaticly. If no separator was given, space will be chose automaticly
+
+---
 
 ---
 
 ### **ConvertStringTo3dVector**
 
-**Return Type:** `Vector`
+**Return Type:** `FVector`
 
 **Parameters:**
-- `string` (Type: `String`): The string representation of 3D vector.
-- `separator` (Type: `String`): The separator used in the string.
+- `FString string, FString separator`
 
 **Description:**
-Converts the specified string into a 3D vector using the provided separator.
+return a 3d vector based on string, sapces and given separator will be removed automaticly. If no separator was given, space will be chose automaticly
+
+---
 
 ---
 
 ### **ConvertStringTo2dVector**
 
-**Return Type:** `Vector2D`
+**Return Type:** `FVector2D`
 
 **Parameters:**
-- `string` (Type: `String`): The string representation of 2D vector.
-- `separator` (Type: `String`): The separator used in the string.
+- `FString string, FString separator`
 
 **Description:**
-Converts the specified string into a 2D vector using the provided separator.
+return a 2d vector based on string, sapces and given separator will be removed automaticly. If no separator was given, space will be chose automaticly
 
-...
+---
+
+---
 
 ### **ConvertBinaryStringToInt**
 
-**Return Type:** `Integer`
+**Return Type:** `int64`
 
 **Parameters:**
-- `string` (Type: `String`): The binary string to convert.
+- `FString string`
 
 **Description:**
-Converts the specified binary string into an integer.
+Convert a binary string to int ( return 0 if the conversion failed)
 
-...
+---
+
+---
 
 ### **ConvertIntToBinaryString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `value` (Type: `Integer`): The integer value to convert.
+- `int32 value`
 
 **Description:**
-Converts the specified integer into a binary string.
+Convert an int to a binary string
 
-...
+---
+
+---
 
 ### **ConvertCustomBaseStringToInt**
 
-**Return Type:** `Integer`
+**Return Type:** `int64`
 
 **Parameters:**
-- `string` (Type: `String`): The custom base string to convert.
-- `base` (Type: `Integer`): The base of the number system used in the string.
+- `FString string, int32 base`
 
 **Description:**
-Converts the specified custom base string into an integer.
+Convert a number string with a custom base to int ( return 0 if conversion failed )
 
-...
+---
+
+---
 
 ### **ConvertHexadecimalStringToInt**
 
-**Return Type:** `Integer`
+**Return Type:** `int64`
 
 **Parameters:**
-- `string` (Type: `String`): The hexadecimal string to convert.
+- `FString string`
 
 **Description:**
-Converts the specified hexadecimal string into an integer.
+Convert a hexadecimal string to int (return 0 if conversion failed )
 
-...
+---
+
+---
 
 ### **ConvertOctalStringToInt**
 
-**Return Type:** `Integer`
+**Return Type:** `int64`
 
 **Parameters:**
-- `string` (Type: `String`): The octal string to convert.
+- `FString string`
 
 **Description:**
-Converts the specified octal string into an integer.
+Convert an octal string to int (return 0 if conversion failed )
 
-...
+---
+
+---
 
 ### **ConvertIntToHexadecimalString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `value` (Type: `Integer`): The integer value to convert.
+- `int32 value`
 
 **Description:**
-Converts the specified integer into a hexadecimal string.
+Convert an int to a hexadecimal string
 
-...
+---
+
+---
 
 ### **ConvertIntToOctalString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `value` (Type: `Integer`): The integer value to convert.
+- `int32 value`
 
 **Description:**
-Converts the specified integer into an octal string.
+Convert an int to an octal string
 
-...
+---
+
+---
 
 ### **ConvertIntToCustomBaseString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `value` (Type: `Integer`): The integer value to convert.
-- `base` (Type: `Integer`): The base of the number system for the resulting string.
+- `int32 value, int32 base`
 
 **Description:**
-Converts the specified integer into a custom base string.
+Convert an int to a number string with a custom base
 
-...
+---
+
+---
 
 ### **ConvertDateTimeToString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `datetime` (Type: `DateTime`): The datetime object to convert.
+- `FDateTime datetime`
 
 **Description:**
-Converts the specified datetime object into a string.
+Convert a dateTime to a string
 
-...
+---
+
+---
 
 ### **IsStringInStringArray**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
-- `stringArray` (Type: `Array of Strings`): The array of strings to check against.
+- `FString string, TArray<FString> stringArray`
 
 **Description:**
-Checks if the specified string is present in the given array of strings.
+Return true if the string is found in the array of strings
 
-...
+---
+
+---
 
 ### **AreNumerics**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if all characters in the specified string are numeric.
+return true if all elements of the string are numerics 
 
-...
+---
+
+---
 
 ### **AreAlphas**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if all characters in the specified string are alphabetic.
+return true if all elements of the string are Alphas 
 
-...
+---
+
+---
 
 ### **AreSpecials**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string contains special characters.
+return true if all elements of the string are specials characters 
 
-...
+---
+
+---
 
 ### **AreUppers**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if all characters in the specified string are uppercase.
+return true if all elements of the string are upper characters 
 
-...
+---
+
+---
 
 ### **AreLowers**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if all characters in the specified string are lowercase.
+return true if all elements of the string are lower characters 
 
-...
+---
+
+---
 
 ### **ContainsNumeric**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string contains numeric characters.
+return true if there is a numeric character in the given string
 
-...
+---
+
+---
 
 ### **ContainsAlpha**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string contains alphabetic characters.
+return true if there is a Alpha in the given string
 
-...
+---
+
+---
 
 ### **ContainsSpecial**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string contains special characters.
+return true if there is a special character in the given string
 
-...
+---
+
+---
 
 ### **ContainsUpper**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string contains uppercase characters.
+return true if there is an upper character in the given string
 
-...
+---
+
+---
 
 ### **ContainsLower**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string contains lowercase characters.
+return true if there is an lower character in the given string
+
+---
 
 ---
 
 ### **ContainsChars**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
-- `characters` (Type: `String`): The characters to check for in the string.
+- `FString string, FString characters`
 
 **Description:**
-Checks if the specified string contains any of the characters provided.
+return true if any given characters was found 
+
+---
 
 ---
 
 ### **IsEmailFormat**
 
-**Return Type:** `Integer`
+**Return Type:** `int32`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string is in email format and returns an integer code indicating the result.
+Check if the string is in the correct email format \n error code \n 0 no error \n 1 contains space \n 2 not allowed character \n 3 less or more than 1 '.' \n 4 less or more than 1 '@' \n 5 wrong '@' location \n 6 wrong '.' location
+
+---
 
 ---
 
 ### **IsEmailDomainFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The email domain to check.
-- `domains` (Type: `Array of Strings`): The allowed email domains.
+- `FString string, TArray<FString> domains`
 
 **Description:**
-Checks if the specified email domain is in the correct format and is present in the list of allowed domains.
+check if the string is in the correct email format and contains given domains
 
-...
+---
+
+---
 
 ### **IsUrlFormat**
 
-**Return Type:** `Integer`
+**Return Type:** `int32`
 
 **Parameters:**
-- `string` (Type: `String`): The URL to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string is in URL format and returns an integer code indicating the result.
+Check if a string is in the correct URL format \n error code \n 0 no error \n 1 no 'http://' or 'https://' \n 2 less than 3 sections ( separate by '.')
 
-...
+---
+
+---
 
 ### **IsUrlTLDFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The TLD to check.
-- `TLD` (Type: `Array of Strings`): The allowed TLDs.
+- `FString string, TArray<FString> TLD`
 
 **Description:**
-Checks if the specified TLD is in the correct format and is present in the list of allowed TLDs.
+Return true if the url has the TLD listed in the given array
 
-...
+---
+
+---
 
 ### **IsUrlDomainFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The domain to check.
-- `domains` (Type: `Array of Strings`): The allowed domains.
+- `FString string, TArray<FString> domains`
 
 **Description:**
-Checks if the specified domain is in the correct format and is present in the list of allowed domains.
+Return true if the url has the TLD listed in the given array
 
-...
+---
+
+---
 
 ### **IsUrlSubdomainFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The subdomain to check.
-- `subDomains` (Type: `Array of Strings`): The allowed subdomains.
+- `FString string, TArray<FString> subDomains`
 
 **Description:**
-Checks if the specified subdomain is in the correct format and is present in the list of allowed subdomains.
+Return true if the url has the subdomain listed in the given array
 
-...
+---
+
+---
 
 ### **IsUrlDomainAndSubdomainFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The full domain with subdomain to check.
-- `domains` (Type: `Array of Strings`): The allowed domains.
-- `subDomains` (Type: `Array of Strings`): The allowed subdomains.
+- `FString string, TArray<FString> domains, TArray<FString> subDomains`
 
 **Description:**
-Checks if the specified full domain with subdomain is in the correct format and both are present in the respective lists of allowed domains and subdomains.
+Return true if the url has the domain and subdomain listed in the given arrays
 
-...
+---
+
+---
 
 ### **GetUrlPathAsString**
 
-**Return Type:** `String`
+**Return Type:** `FString`
 
 **Parameters:**
-- `string` (Type: `String`): The URL to extract the path from.
+- `FString string`
 
 **Description:**
-Extracts the path component from the specified URL.
+Get url path as string
 
-...
+---
+
+---
 
 ### **IsIPv4Format**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The IPv4 address to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string is in IPv4 format.
+Return true if the given string is an IPv4
 
-...
+---
+
+---
 
 ### **IsIPv6Format**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The IPv6 address to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string is in IPv6 format.
+Return true if the given string is an IPv6
 
-...
+---
+
+---
 
 ### **IsHexadecimalFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string is in hexadecimal format.
+Return true if the given string is a hexadecimal number
 
-...
+---
+
+---
 
 ### **IsBinaryFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string is in binary format.
+Return true if the given string is a binary number
 
-...
+---
+
+---
 
 ### **IsOctalFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The string to check.
+- `FString string`
 
 **Description:**
-Checks if the specified string is in octal format.
+Return true if the given string is an octal number
 
-...
+---
+
+---
 
 ### **IsFileFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The file name to check.
-- `extensions` (Type: `Array of Strings`): The allowed file extensions.
+- `FString string, TArray<FString> extensions`
 
 **Description:**
-Checks if the specified file name has a valid format and has an allowed file extension.
+Return true if the file has a given extension
 
-...
+---
+
+---
 
 ### **IsImageFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The image file name to check.
+- `FString string`
 
 **Description:**
-Checks if the specified image file name has a valid format.
+Return true if the file has an image extension
 
-...
+---
+
+---
 
 ### **IsVideoFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The video file name to check.
+- `FString string`
 
 **Description:**
-Checks if the specified video file name has a valid format.
+Return true if the file has a video extension
 
-...
+---
+
+---
 
 ### **IsAudioFormat**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The audio file name to check.
+- `FString string`
 
 **Description:**
-Checks if the specified audio file name has a valid format.
+Return true if the file has an audio extension
 
-...
+---
+
+---
 
 ### **IsUrlHttp**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The URL to check.
+- `FString string`
 
 **Description:**
-Checks if the specified URL uses the HTTP protocol.
+Return true if the string represents an HTTP URL
 
-...
+---
+
+---
 
 ### **IsUrlHttps**
 
-**Return Type:** `Boolean`
+**Return Type:** `bool`
 
 **Parameters:**
-- `string` (Type: `String`): The URL to check.
+- `FString string`
 
 **Description:**
-Checks if the specified URL uses the HTTPS protocol.
+Return true if the string represents an HTTPS URL
 
-...
+---
+
+---
 
 ### **SetDateTimeDay**
 
-**Return Type:** `DateTime`
+**Return Type:** `FDateTime`
 
 **Parameters:**
-- `dateTime` (Type: `DateTime`): The original DateTime object.
-- `day` (Type: `Integer`, default: `1`): The day value to set.
+- `FDateTime dateTime, int day = 1`
 
 **Description:**
-Sets the day component of the specified DateTime object.
+Set the day of a dateTime
 
-...
+---
+
+---
 
 ### **SetDateTimeYear**
 
-**Return Type:** `DateTime`
+**Return Type:** `FDateTime`
 
 **Parameters:**
-- `dateTime` (Type: `DateTime`): The original DateTime object.
-- `year` (Type: `Integer`, default: `1`): The year value to set.
+- `FDateTime dateTime, int year = 1`
 
 **Description:**
-Sets the year component of the specified DateTime object.
+Set the year of a dateTime
 
-...
+---
+
+---
 
 ### **SetDateTimeMonth**
 
-**Return Type:** `DateTime`
+**Return Type:** `FDateTime`
 
 **Parameters:**
-- `dateTime` (Type: `DateTime`): The original DateTime object.
-- `month` (Type: `Integer`, default: `1`): The month value to set.
+- `FDateTime dateTime, int month = 1`
 
 **Description:**
-Sets the month component of the specified DateTime object.
+Set the month of a dateTime
+
+---
+
+---
+
+### **SetDateTimeDate**
+
+**Return Type:** `FDateTime`
+
+**Parameters:**
+- `FDateTime dateTime, int year = 1, int month = 1, int day = 1`
+
+**Description:**
+Set the date (day, month and year) of a dateTime
+
+---
+
+---
+
+### **SetDateTimeHour**
+
+**Return Type:** `FDateTime`
+
+**Parameters:**
+- `FDateTime dateTime, int hour = 0`
+
+**Description:**
+Set the hour of a dateTime
+
+---
+
+---
+
+### **SetDateTimeMinute**
+
+**Return Type:** `FDateTime`
+
+**Parameters:**
+- `FDateTime dateTime, int minute = 0`
+
+**Description:**
+Set the minute of a dateTime
+
+---
+
+---
+
+### **SetDateTimeSecond**
+
+**Return Type:** `FDateTime`
+
+**Parameters:**
+- `FDateTime dateTime, int second = 0`
+
+**Description:**
+Set the second of a dateTime
+
+---
+
+---
+
+### **SetDateTimeMillisecond**
+
+**Return Type:** `FDateTime`
+
+**Parameters:**
+- `FDateTime dateTime, int millisecond = 0`
+
+**Description:**
+Set the millisecond of a dateTime
+
+---
+
+---
+
+### **SetDateTimeTime**
+
+**Return Type:** `FDateTime`
+
+**Parameters:**
+- `FDateTime dateTime, int hour = 0, int minute = 0, int second = 0, int millisecond = 0`
+
+**Description:**
+Set the time (hour, minute, second and millisecond) of a dateTime
 
 ---
 
